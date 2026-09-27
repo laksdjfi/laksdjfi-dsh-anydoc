@@ -1,0 +1,6 @@
+# dsh-anydoc bundle patch: mounts the plugin into a profile layer stack.
+# The entry module (dsh-anydoc) registers agent tools, the convert-documents
+# skill, and the /_dsh/anydoc/* web routes.
+- insert:
+    - id: anydoc
+      name: 'dsh-anydoc'

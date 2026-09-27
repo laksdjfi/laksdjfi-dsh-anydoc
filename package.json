@@ -1,0 +1,62 @@
+{
+  "name": "dsh-anydoc",
+  "version": "0.1.1",
+  "description": "anydoc document converter for DeepSeek Harness: convert Word/PPT/Excel/OpenDocument/RTF/EPUB/CSV/PDF to GitHub-Flavored Markdown via agent tools and a Web panel.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laksdjfi/dsh-anydoc.git"
+  },
+  "homepage": "https://github.com/laksdjfi/dsh-anydoc",
+  "bugs": {
+    "url": "https://github.com/laksdjfi/dsh-anydoc/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "anydoc",
+    "document-conversion",
+    "markdown",
+    "docx",
+    "pdf",
+    "pptx",
+    "xlsx",
+    "ocr-free"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "vendor",
+    "assets",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-tool",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  }
+}
